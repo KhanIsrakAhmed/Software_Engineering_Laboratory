@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Update Student</title>
+  <link rel="stylesheet" href="css/styles.css">
+  
+</head>
+<body>
+  <div class="container">
+    <h1>Update Student</h1>
+    <p>Enter the Student ID to search for the student record.</p>
+    <form id="searchForm" class="form">
+      <div class="form-group">
+        <label for="searchId">Student ID:</label>
+        <input type="number" id="searchId" name="studentId" placeholder="Enter Student ID" required>
+      </div>
+      <button type="button" class="submit-btn" onclick="searchStudent()">Search</button>
+      <!-- <button type="button" class="submit-btn" onclick="searchStudent('update')">Search</button> -->
+    </form>
+    
+    <div id="updateSection" class="hidden">
+      <h2>Current Student Information</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="currentInfoRow">
+            <!-- Populated via AJAX -->
+          </tr>
+        </tbody>
+      </table>
+      
+      <div class="bor-box">
+        <h2>Update Information</h2>
+        <form id="updateForm" action="php/update_process.php" method="post" class="form">
+          <input type="hidden" id="updateStudentId" name="studentId">
+          <div class="form-group">
+            <label for="updateName">Student Name:</label>
+            <input type="text" id="updateName" name="name" placeholder="Enter New Name" required>
+          </div>
+          <div class="form-group">
+            <label for="updateEmail">Student Email:</label>
+            <input type="email" id="updateEmail" name="email" placeholder="Enter New Email" required>
+          </div>
+          <div class="form-group">
+            <label for="updateAge">Student Age:</label>
+            <input type="number" id="updateAge" name="age" placeholder="Enter New Age" required>
+          </div>
+          <button type="submit" class="submit-btn">Update Information</button>
+        </form>
+      </div>
+    </div>
+    <button class="back-btn" onclick="location.href='index.html'">Back to Home</button>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
