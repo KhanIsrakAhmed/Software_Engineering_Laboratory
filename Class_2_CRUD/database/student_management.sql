@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2025 at 08:39 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Mar 14, 2025 at 07:00 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -32,8 +33,8 @@ CREATE TABLE `students` (
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `age` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `students`
@@ -41,8 +42,12 @@ CREATE TABLE `students` (
 
 INSERT INTO `students` (`id`, `name`, `email`, `age`, `created_at`) VALUES
 (1, 'Sahid Hossain Mustakim', 'shm@gmail.com', 32, '2025-02-27 14:18:48'),
-(3, 'Sadia Ahmmed', 'sahmmed@bscse.uiu.ac.bd', 56, '2025-02-27 14:32:34'),
-(4, 'Hossain', 'hossainmhd@yahoo.com', 23, '2025-02-27 15:05:17');
+(2, 'Sadia Ahmmed', 'sahmmed@bscse.uiu.ac.bd', 56, '2025-02-27 14:32:34'),
+(3, 'Hossain', 'hossainmhd@yahoo.com', 23, '2025-02-27 15:05:17'),
+(4, 'Khan Israk Ahmed', 'israk.ahmed275@gmail.com', 22, '2025-03-14 17:08:05'),
+(5, 'Sufia Islam Mitu', 'sufia@bcse.com', 21, '2025-03-14 17:36:05'),
+(6, 'Ratul chain', 'ratul@bscse.com', 27, '2025-03-14 17:41:28'),
+(12, 'Sabid hassan', 'sabit@gmail.com', 25, '2025-03-14 17:51:53');
 
 --
 -- Indexes for dumped tables
@@ -62,7 +67,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
